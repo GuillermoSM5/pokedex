@@ -20,7 +20,7 @@ const Busqueda = () => {
 	const search = (e) => {
 		if (serchPokemon) {
 			e.preventDefault();
-			fetch(`https://pokeapi.co/api/v2/pokemon/${serchPokemon}`)
+			fetch(`https://pokeapi.co/api/v2/pokemon/${serchPokemon.toLowerCase()}`)
 				.then((res) => res.json())
 				.then((data) => setPokemon(data))
 				.catch((err) => {
