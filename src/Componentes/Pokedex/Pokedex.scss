@@ -1,0 +1,11 @@
+@import '../../Styles.scss';
+.pokedex {
+	margin: 30px 0;
+	.banca__contenido {
+		//@include box;
+		.banca__contenido-title {
+			text-align: center;
+			@include box;
+		}
+	}
+}

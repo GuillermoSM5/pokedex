@@ -1,0 +1,26 @@
+@import '../../Styles.scss';
+.busqueda {
+	text-align: center;
+
+	.busqueda__title {
+		margin: 50px 0 25px 0;
+		font-weight: $titulo-weight;
+	}
+	.busqueda__formulario {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.busqueda__formulario-input {
+			width: 60%;
+			padding: 5px;
+			border-radius: 7px;
+			outline: none;
+			border: 0.5px solid $borde-imput;
+			margin-bottom: 25px;
+		}
+		.busqueda__formulario-button {
+			@include boton;
+		}
+	}
+}
