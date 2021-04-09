@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 const initialState = {
 	active: [false],
 	banca: [],
+	capturado: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -16,12 +17,19 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				banca: state.banca.concat(action.data),
+				capturado: action.capturado,
 			};
 
 		case 'Liberar pokemon':
 			return {
 				...state,
 				banca: state.banca.filter((pokemon) => pokemon.id !== action.data.id),
+			};
+
+		case 'no capurado':
+			return {
+				...state,
+				capturado: false,
 			};
 
 		default:

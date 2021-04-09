@@ -1,8 +1,9 @@
 import React from 'react';
 import './Card.scss';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Card = ({ pokemon, boton = 'capturar' }) => {
+	const capturado = useSelector((state) => state.capturado);
 	const dispatch = useDispatch();
 	const banca = (e) => {
 		e.preventDefault();
@@ -10,6 +11,7 @@ const Card = ({ pokemon, boton = 'capturar' }) => {
 			dispatch({
 				type: 'añadir banca',
 				data: pokemon,
+				capturado: true,
 			});
 		}
 		if (boton === 'Liberar pokemon') {
@@ -36,6 +38,13 @@ const Card = ({ pokemon, boton = 'capturar' }) => {
 				<form action="" onSubmit={banca}>
 					<button className="card__contenido-button">{boton}</button>
 				</form>
+				{capturado && boton === 'capturar' ? (
+					<div className="card__contenido-alerta">
+						<p>Pokemon Capturado. Puedes verlo en tu pokedex</p>
+					</div>
+				) : (
+					<></>
+				)}
 			</div>
 		</section>
 	);

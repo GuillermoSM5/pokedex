@@ -27,6 +27,10 @@ const Busqueda = () => {
 					console.log('Pokemon no encontrado');
 					setPokemon('');
 				});
+			dispatch({
+				type: 'no capurado',
+				data: false,
+			});
 		} else StereoPannerNode(true);
 	};
 	return (

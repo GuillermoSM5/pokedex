@@ -16,5 +16,12 @@
 			@include boton;
 			width: 200px;
 		}
+		.card__contenido-alerta {
+			width: 60%;
+			margin: 20px auto;
+			border: 1px solid green;
+			border-radius: 10px;
+			background-color: rgba($color: #3fbf3f, $alpha: 0.53);
+		}
 	}
 }
