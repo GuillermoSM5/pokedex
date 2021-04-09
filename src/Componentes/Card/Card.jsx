@@ -3,7 +3,6 @@ import './Card.scss';
 import { useDispatch } from 'react-redux';
 
 const Card = ({ pokemon, boton = 'capturar' }) => {
-	console.log(boton);
 	const dispatch = useDispatch();
 	const banca = (e) => {
 		e.preventDefault();

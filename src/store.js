@@ -13,15 +13,15 @@ const reducer = (state = initialState, action) => {
 			break;
 
 		case 'añadir banca':
-			initialState.banca.push(action.data);
-			break;
+			return {
+				...state,
+				banca: state.banca.concat(action.data),
+			};
 
 		case 'Liberar pokemon':
 			return {
-				active: initialState.active,
-				banca: initialState.banca.filter(
-					(pokemon) => pokemon.id !== action.data.id
-				),
+				...state,
+				banca: state.banca.filter((pokemon) => pokemon.id !== action.data.id),
 			};
 
 		default:
@@ -30,4 +30,4 @@ const reducer = (state = initialState, action) => {
 	return state;
 };
 
-export default createStore(reducer, initialState);
+export default createStore(reducer);

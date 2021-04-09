@@ -20,7 +20,7 @@ const Team = () => {
 				</h2>
 				<div className="banca__contenido-pokemones">
 					{pokemones.map((pokemon) => (
-						<Card pokemon={pokemon} boton="Liberar pokemon" />
+						<Card key={pokemon.id} pokemon={pokemon} boton="Liberar pokemon" />
 					))}
 				</div>
 			</div>
